@@ -1,4 +1,26 @@
 :root
 {
-    --negro-primario: 
+    --primary-black: #1c1c22;
+    --black: hsla(237, 28%, 43%, 0.26);
+    --white: aliceblue;
+    --green: #06ee9e;
+    --bright-green: #00cf67;
 }
+body
+{
+    background-color: var(--primary-black);
+}
+h1
+{
+    color: var(--green);
+    text-align: center;
+    margin-top: 5rem;
+    font-family: Pilowlava;
+    font-size: 6rem;
+}
+canvas
+{
+    text-align: center;
+    background-color: var(--black);
+    border-radius: 0.5rem;
+}   
