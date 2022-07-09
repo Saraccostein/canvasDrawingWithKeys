@@ -1,14 +1,17 @@
 :root
 {
     --primary-black: #1c1c22;
-    --black: hsla(237, 28%, 43%, 0.26);
-    --white: aliceblue;
+    --black: hsla(201, 38%, 40%, 0.26); /* hsl 201,38,40      hsla(237, 28%, 43%, 0.26*/
+    --white: #D0E0FF;
     --green: #06ee9e;
+    --purple: #5555FF;
     --bright-green: #00cf67;
 }
 body
 {
     background-color: var(--primary-black);
+    margin: auto;
+    text-align: center;
 }
 h1
 {
@@ -23,4 +26,21 @@ canvas
     text-align: center;
     background-color: var(--black);
     border-radius: 0.5rem;
+}
+::selection
+{
+    background:var(--purple);
+    color: var(--white);
+}
+ 
+::-moz-selection
+{
+    background: var(--purple);
+    color:var(--white);
+}
+ 
+::-webkit-selection
+{
+    background:var(--purple);
+    color:var(--white);
 }   
