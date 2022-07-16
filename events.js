@@ -3,8 +3,10 @@ var paint = document.getElementById('área_de_dibujo');
 var canvas_area = paint.getContext('2d');
 
 /* Styles */
-var green = '#06EE9E';
-var purple = '#5555FF';
+var green   = '#06EE9E';
+var purple  = '#5555FF';
+var white   = '#D0E0FF';
+
 var canvas_color = green;  /*🌈🎨*/
 var line_width = 3;
 var canvas_cap = 'round';  /* ■ butt ■ */ /* ● round ● */ /* ■ square ■ */
@@ -33,15 +35,22 @@ var tecla =
     LEFT: 37,  /* ← */
     UP: 38,    /* ↑ */
     RIGHT: 39, /* → */
-    DOWN: 40   /* ↓ */
+    DOWN: 40,  /* ↓ */
+
+    A: 65, /* ← */
+    W: 87, /* ↑ */
+    D: 68, /* → */
+    S: 83  /* ↓ */
 };
 
 document.addEventListener('keydown', dibujarTeclado);
 
 function dibujarTeclado(evento)
 {
+
     switch(evento.keyCode)
     {
+
 
     case tecla.LEFT:  /* ← */
         dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x - movement, y, canvas_area);
@@ -60,11 +69,38 @@ function dibujarTeclado(evento)
 
     case tecla.DOWN:  /* ↓ */
         dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x, y + movement, canvas_area);
-        y = y + movement;
+        y = y + movement;   
     break;
 
-    default:
-        console.log('Tecla MISCÉLANEA oprimida');
+
+
+    case tecla.A:  /* ← */
+        dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x - movement, y, canvas_area);
+        x = x - movement;
     break;
+
+    case tecla.W:    /* ↑ */
+        dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x, y - movement, canvas_area);
+        y = y - movement;
+    break;
+
+    case tecla.D: /* → */
+        dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x + movement, y, canvas_area);
+        x = x + movement;
+    break;
+
+    case tecla.S:  /* ↓ */
+        dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x, y + movement, canvas_area);
+        y = y + movement;   
+    break;
+
+
     }
+    console.log(evento);
+   /* if(tecla == UP)
+    {
+        dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x - movement, y - movement, canvas_area);
+    x = x - movement;
+    y = y - movement;
+    } */
 }

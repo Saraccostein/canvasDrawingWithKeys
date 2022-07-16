@@ -1,3 +1,4 @@
+/* Pilowlava */
 @font-face 
 {
   font-family: 'Pilowlava';
@@ -6,3 +7,6 @@
   font-style: normal;
   font-weight: normal;
 }
+
+/* Inter regular */
+@import url('https://api.fonts.coollabs.io/css2?family=Inter&display=swap');
