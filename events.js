@@ -8,7 +8,7 @@ var purple = '#5555FF';
 var canvas_color = green;  /*🌈🎨*/
 var line_width = 3;
 var canvas_cap = 'round';  /* ■ butt ■ */ /* ● round ● */ /* ■ square ■ */
-var movement = 30;
+var movement = 10;
 
 /* Initial point */
 var x = 250;
