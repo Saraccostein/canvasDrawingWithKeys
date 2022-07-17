@@ -92,7 +92,9 @@ var tecla =
 document.addEventListener('keydown', dibujarTeclado);
 
 function dibujarTeclado(event)
+
 {
+    console.log(event);
     dibujarLínea(green, 8.5, 'round', 250, 250, 250, 250, canvas_area);
 
     switch(event.keyCode)
@@ -143,12 +145,17 @@ function dibujarTeclado(event)
 
 
     }
-   /* if(tecla == UP)
+
+   /* Experimento para dibujar una línea diagonal
+   
+    if(tecla.UP && tecla.LEFT)
     {
         dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x - movement, y - movement, canvas_area);
-    x = x - movement;
-    y = y - movement;
-    } */
+        x = x - movement;
+        y = y - movement;
+    }
+
+    */
 }
 
 
