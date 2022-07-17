@@ -52,28 +52,6 @@ img
     vertical-align: middle;
 }
 
-/* .arrow-box
-{
-    background-color: var(--gray);
-    width: 15%;
-    display: inline-block;
-    border-radius: 1rem;
-    height: 4.5rem;
-    font-size: 3rem;
-    font-family: 'Alliance No.1', sans-serif;
-    vertical-align: middle;
-    margin-right: 1.32rem;
-    padding-top: 0.4rem;
-}
-.arrowbox-container
-{
-    width: 500px;
-    text-align: center;
-    align-self: center;
-    margin: 2rem auto;
-    vertical-align: middle;
-} */
-
 #green_input  /* 🟢 */
 {
     background-color: var(--green);
