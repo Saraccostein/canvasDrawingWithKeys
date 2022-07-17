@@ -10,9 +10,19 @@ var white   = '#D0E0FF';
 var green   = '#06EE9E';
 var purple  = '#5555FF';
 var blue    = '#3F3DFF';
+var red     = '#ff9999';
 
 var color = green;
 
+/* 🔴 */
+var red_button = document.getElementById(red_input);
+red_input.addEventListener("click", changeColorToRed);
+
+function changeColorToRed()
+{
+    color = red;
+}
+ 
 /* 🟢 */
 var green_button = document.getElementById(green_input);
 green_input.addEventListener("click", changeColorToGreen);

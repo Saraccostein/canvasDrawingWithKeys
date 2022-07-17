@@ -1,11 +1,17 @@
 :root
 {
+    /* Colors */
     --black:   #1c1c22;
     --gray:    #25323d;
     --white:   #D0E0FF;
     --green:   #06ee9e;
     --purple:  #5555FF;
     --blue:    #3F3DFF;
+    --red:     #ff9999;
+
+    /* Distances */
+    --remoteness: 2.3rem;
+    --between_colors: 0.3rem;
 }
 
 /*  Discarded colors 
@@ -52,28 +58,34 @@ img
     vertical-align: middle;
 }
 
+#red_input  /* 🔴 */
+{
+    background-color: var(--red);
+    margin-right: var(--between_colors);
+}
+
 #green_input  /* 🟢 */
 {
     background-color: var(--green);
+    margin-right: var(--between_colors);
 }
 
 #purple_input /* 🟣 */
 {
     background-color: var(--purple);
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-right: var(--between_colors);
 }
 
 #white_input  /* ⚪ */
 {
     background-color: var(--white);
-    margin-right: 3.6rem;
+    margin-right: var(--remoteness);
 }
 
 #eraser_input /* 🤖 */
 {
     background-color: var(--gray);
-    margin-right: 3.6rem;
+    margin-right: var(--remoteness);
 }
 
 .button       /* 🔳 */
