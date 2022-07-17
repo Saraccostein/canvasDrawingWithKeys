@@ -1,21 +1,32 @@
 /* Draw zone */
 var paint = document.getElementById('área_de_dibujo');
 var canvas_area = paint.getContext('2d');
+var initial_thick = 4;
 
 /* Styles */
 var green   = '#06EE9E';
 var purple  = '#5555FF';
 var white   = '#D0E0FF';
 
-var canvas_color = green;  /*🌈🎨*/
-var line_width = 3;
-var canvas_cap = 'round';  /* ■ butt ■ */ /* ● round ● */ /* ■ square ■ */
-var movement = 10;
+var canvas_color = green;  /*🟢🟣⚪*/
+var line_width = 4;
+var canvas_cap = 'round';  /* ■ butt ■ | ● round ● | ■ square ■ */
+var movement = 15;
+
+function changeColor(input_color)
+{
+    canvas_color = input_color;
+}
+
+function changeThick(input_width)
+{
+    line_width = input_width;
+}
 
 /* Initial point */
 var x = 250;
 var y = 250;
-dibujarLínea(green, 7, 'round', 250, 250, 250, 250, canvas_area);
+dibujarLínea(green, 8.5, 'round', 250, 250, 250, 250, canvas_area);
 
 function dibujarLínea(color, width, cap, x_inicial, y_inicial, x_final, y_final, lienzo)
 {
@@ -45,10 +56,10 @@ var tecla =
 
 document.addEventListener('keydown', dibujarTeclado);
 
-function dibujarTeclado(evento)
+function dibujarTeclado(event)
 {
 
-    switch(evento.keyCode)
+    switch(event.keyCode)
     {
 
 
@@ -96,11 +107,42 @@ function dibujarTeclado(evento)
 
 
     }
-    console.log(evento);
    /* if(tecla == UP)
     {
         dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x - movement, y - movement, canvas_area);
     x = x - movement;
     y = y - movement;
     } */
+}
+
+var drawing = false;
+var drawzone = paint.getBoundingClientRect();
+
+paint.addEventListener('mousedown', calc);
+paint.addEventListener('mousemove', drawingWithMouseMovement)
+paint.addEventListener('mouseup', reset)
+
+function calc(event)
+{
+    x_mouse = event.clientX - drawzone.left;
+    y_mouse = event.clientY - drawzone.top;
+    drawing = true;
+}
+
+function drawingWithMouseMovement(event)
+{
+    if (drawing === true)
+    {
+        dibujarLínea(canvas_color, line_width, canvas_cap, x_mouse, y_mouse, event.clientX - drawzone.left, y_mouse = event.clientY - drawzone.top, canvas_area);
+        x_mouse = event.clientX - drawzone.left;
+        y_mouse = event.clientY - drawzone.top;
+    }
+}
+
+function reset(event)
+{
+    dibujarLínea(canvas_color, line_width, canvas_cap, x_mouse, y_mouse, event.clientX - drawzone.left, y_mouse = event.clientY - drawzone.top, canvas_area);
+    x_mouse = 0;
+    y_mouse = 0;
+    drawing = false;
 }

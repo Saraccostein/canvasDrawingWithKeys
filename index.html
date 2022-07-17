@@ -18,7 +18,26 @@
 <body>
 
     <h1>Canvas!</h1>
-    <canvas id="área_de_dibujo" width="500" height="500"></canvas>
+    <canvas id="área_de_dibujo" width="500"  height="500"></canvas><br>
+    <input  id="color_input"    type="color" oninput="changeColor(this.value);">
+    <input  id="thick_input"    type="range" oninput="changeThick(this.value);" min="4" max="20">
+    <!--
+    <div class="arrowbox-container">
+        <span id="arrowUp" class="arrow-box">
+            ↑
+        </span>
+        <span id="arrowLeft" class="arrow-box">
+            ←
+        </span>
+        <span id="arrowDown" class="arrow-box">
+            ↓
+        </span>
+        <span id="arrowRight" class="arrow-box">
+            →
+        </span>
+    </div>
+    -->
+
     <script src="events.js"></script>
 
 </body>
