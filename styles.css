@@ -1,41 +1,60 @@
 :root
 {
-    --primary-black: #1c1c22;
-    --black:   hsla(201, 38%, 40%, 0.26); /* hsl 201,38,40      hsla(237, 28%, 43%, 0.26*/
+    --black:   #1c1c22;
+    --gray:    #25323d;
     --white:   #D0E0FF;
     --green:   #06ee9e;
     --purple:  #5555FF;
+    --blue:    #3F3DFF;
 }
+
+/*  Discarded colors 
+ 
+    hsla(201, 38%, 40%, 1) 
+    hsla(237, 28%, 43%, 0.26) 
+
+*/
+
 body
 {
-    background-color: var(--primary-black);
+    background-color: var(--black);
+    color: var(--green);
     margin: auto;
     text-align: center;
-    color: var(--green);
 }
+
 h1
 {
-    text-align: center;
     margin-top: 5rem;
+    text-align: center;
     font-family: 'Pilowlava';
     font-size: 6rem;
 }
+
 canvas
 {
+    background-color: var(--gray);
     text-align: center;
-    background-color: var(--black);
     border-radius: 0.5rem;
     margin-bottom: 2rem;
 }
+
 img
 {
     padding-top: 0.2rem;
-width: 2.5rem;
-vertical-align: middle;
+    width: 2.5rem;
+    vertical-align: middle;
 }
+
+.button:hover
+{
+    border: 0.2rem solid var(--blue);
+    vertical-align: middle;
+}
+
 /* .arrow-box
 {
-    background-color: var(--black);
+    background-color: var(--gray);
     width: 15%;
     display: inline-block;
     border-radius: 1rem;
@@ -54,46 +73,56 @@ vertical-align: middle;
     margin: 2rem auto;
     vertical-align: middle;
 } */
-#green_input
+
+#green_input  /* 🟢 */
 {
     background-color: var(--green);
 }
-#purple_input
+
+#purple_input /* 🟣 */
 {
     background-color: var(--purple);
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
-#white_input
+
+#white_input  /* ⚪ */
 {
     background-color: var(--white);
     margin-right: 3.6rem;
 }
-#eraser_input
+
+#eraser_input /* 🤖 */
 {
-    background-color: var(--black);
+    background-color: var(--gray);
     margin-right: 3.6rem;
 }
-.button
+
+.button       /* 🔳 */
 {
     border-radius: 20%;
     height: 3rem;
     width: 3rem;
     display: inline-block;
     vertical-align: middle;
+    border: 0.2rem solid var(--black)
 }
+
 #thick_input
 {
     border: none;
     background-color: var(--green);
     vertical-align: middle;
     width:10%;
-    
 }
+
 .thick_range
 {
     vertical-align: middle;
 }
+
+
+/* Selection color */
 ::selection
 {
     background:var(--purple);

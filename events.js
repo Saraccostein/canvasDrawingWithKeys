@@ -4,12 +4,14 @@ var canvas_area = paint.getContext('2d');
 var initial_thick = 4;
 
 /* Styles */
-var color = green;  /*🟢🟣⚪*/
-
-var black   = '#25323d';
+var black   = '#1c1c22';
+var gray    = '#25323d';
+var white   = '#D0E0FF';
 var green   = '#06EE9E';
 var purple  = '#5555FF';
-var white   = '#D0E0FF';
+var blue    = '#3F3DFF';
+
+var color = green;
 
 /* 🟢 */
 var green_button = document.getElementById(green_input);
@@ -44,7 +46,7 @@ eraser_input.addEventListener("click", changeColorToEraser);
 
 function changeColorToEraser()
 {
-    color = black;
+    color = gray;
 }
 
 /* Thick */
@@ -57,10 +59,9 @@ function changeThick(input_width)
     line_width = input_width;
 }
 
-/* Initial point */
+/* Keyboard */
 var x = 250;
 var y = 250;
-dibujarLínea(green, 8.5, 'round', 250, 250, 250, 250, canvas_area);
 
 function dibujarLínea(color, width, cap, x_inicial, y_inicial, x_final, y_final, lienzo)
 {
@@ -92,6 +93,7 @@ document.addEventListener('keydown', dibujarTeclado);
 
 function dibujarTeclado(event)
 {
+    dibujarLínea(green, 8.5, 'round', 250, 250, 250, 250, canvas_area);
 
     switch(event.keyCode)
     {
@@ -149,6 +151,8 @@ function dibujarTeclado(event)
     } */
 }
 
+
+/* Mouse  */
 var drawing = false;
 var drawzone = paint.getBoundingClientRect();
 
@@ -161,7 +165,6 @@ function calc(event)
     x_mouse = event.clientX - drawzone.left;
     y_mouse = event.clientY - drawzone.top;
     drawing = true;
-    point = false;
 }
 
 function drawingWithMouseMovement(event)
@@ -180,5 +183,18 @@ function reset(event)
     x_mouse = 0;
     y_mouse = 0;
     drawing = false;
-    point = true;
 }
+
+/* Fin („• ᴗ •„) */
+
+/* 
+            ／＞　 フ
+           | 　_　_| 
+          ／` ミ＿xノ 
+         /　　　　 |
+        /　 ヽ　　 ﾉ
+        │　　|　|　|
+    ／￣|　　 |　|　|
+    (￣ヽ＿_ヽ_)__)
+     ＼二)
+*/
