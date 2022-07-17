@@ -4,19 +4,53 @@ var canvas_area = paint.getContext('2d');
 var initial_thick = 4;
 
 /* Styles */
+var color = green;  /*🟢🟣⚪*/
+
+var black   = '#25323d';
 var green   = '#06EE9E';
 var purple  = '#5555FF';
 var white   = '#D0E0FF';
 
-var canvas_color = green;  /*🟢🟣⚪*/
+/* 🟢 */
+var green_button = document.getElementById(green_input);
+green_input.addEventListener("click", changeColorToGreen);
+
+function changeColorToGreen()
+{
+    color = green;
+}
+
+/* 🟣 */
+var purple_button = document.getElementById(purple_input);
+purple_input.addEventListener("click", changeColorToPurple);
+
+function changeColorToPurple()
+{
+    color = purple;
+}
+
+/* ⚪ */
+var white_button = document.getElementById(white_input);
+white_input.addEventListener("click", changeColorToWhite);
+
+function changeColorToWhite()
+{
+    color = white;
+}
+
+/* 🤖 */
+var eraser_button = document.getElementById(eraser_input);
+eraser_input.addEventListener("click", changeColorToEraser);
+
+function changeColorToEraser()
+{
+    color = black;
+}
+
+/* Thick */
 var line_width = 4;
 var canvas_cap = 'round';  /* ■ butt ■ | ● round ● | ■ square ■ */
 var movement = 15;
-
-function changeColor(input_color)
-{
-    canvas_color = input_color;
-}
 
 function changeThick(input_width)
 {
@@ -64,44 +98,44 @@ function dibujarTeclado(event)
 
 
     case tecla.LEFT:  /* ← */
-        dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x - movement, y, canvas_area);
+        dibujarLínea(color, line_width, canvas_cap, x, y, x - movement, y, canvas_area);
         x = x - movement;
     break;
 
     case tecla.UP:    /* ↑ */
-        dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x, y - movement, canvas_area);
+        dibujarLínea(color, line_width, canvas_cap, x, y, x, y - movement, canvas_area);
         y = y - movement;
     break;
 
     case tecla.RIGHT: /* → */
-        dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x + movement, y, canvas_area);
+        dibujarLínea(color, line_width, canvas_cap, x, y, x + movement, y, canvas_area);
         x = x + movement;
     break;
 
     case tecla.DOWN:  /* ↓ */
-        dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x, y + movement, canvas_area);
+        dibujarLínea(color, line_width, canvas_cap, x, y, x, y + movement, canvas_area);
         y = y + movement;   
     break;
 
 
 
     case tecla.A:  /* ← */
-        dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x - movement, y, canvas_area);
+        dibujarLínea(color, line_width, canvas_cap, x, y, x - movement, y, canvas_area);
         x = x - movement;
     break;
 
     case tecla.W:    /* ↑ */
-        dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x, y - movement, canvas_area);
+        dibujarLínea(color, line_width, canvas_cap, x, y, x, y - movement, canvas_area);
         y = y - movement;
     break;
 
     case tecla.D: /* → */
-        dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x + movement, y, canvas_area);
+        dibujarLínea(color, line_width, canvas_cap, x, y, x + movement, y, canvas_area);
         x = x + movement;
     break;
 
     case tecla.S:  /* ↓ */
-        dibujarLínea(canvas_color, line_width, canvas_cap, x, y, x, y + movement, canvas_area);
+        dibujarLínea(color, line_width, canvas_cap, x, y, x, y + movement, canvas_area);
         y = y + movement;   
     break;
 
@@ -127,13 +161,14 @@ function calc(event)
     x_mouse = event.clientX - drawzone.left;
     y_mouse = event.clientY - drawzone.top;
     drawing = true;
+    point = false;
 }
 
 function drawingWithMouseMovement(event)
 {
     if (drawing === true)
     {
-        dibujarLínea(canvas_color, line_width, canvas_cap, x_mouse, y_mouse, event.clientX - drawzone.left, y_mouse = event.clientY - drawzone.top, canvas_area);
+        dibujarLínea(color, line_width, canvas_cap, x_mouse, y_mouse, event.clientX - drawzone.left, y_mouse = event.clientY - drawzone.top, canvas_area);
         x_mouse = event.clientX - drawzone.left;
         y_mouse = event.clientY - drawzone.top;
     }
@@ -141,8 +176,9 @@ function drawingWithMouseMovement(event)
 
 function reset(event)
 {
-    dibujarLínea(canvas_color, line_width, canvas_cap, x_mouse, y_mouse, event.clientX - drawzone.left, y_mouse = event.clientY - drawzone.top, canvas_area);
+    dibujarLínea(color, line_width, canvas_cap, x_mouse, y_mouse, event.clientX - drawzone.left, y_mouse = event.clientY - drawzone.top, canvas_area);
     x_mouse = 0;
     y_mouse = 0;
     drawing = false;
+    point = true;
 }

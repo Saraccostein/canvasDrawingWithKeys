@@ -15,13 +15,19 @@
     <title>Canvas!</title>
 
 </head>
-<body>
 
     <h1>Canvas!</h1>
     <canvas id="área_de_dibujo" width="500"  height="500"></canvas><br>
-    <input  id="color_input"    type="color" oninput="changeColor(this.value);">
-    <input  id="thick_input"    type="range" oninput="changeThick(this.value);" min="4" max="20">
-    <!--
+    
+    <span  id="eraser_input" class="button"><img src="assets/robot.svg"></span>  <!--  -->
+    <span  id="green_input" class="button"></span>   <!-- 🟢 -->
+    <span  id="purple_input" class="button"></span>  <!-- 🟣 -->
+    <span  id="white_input" class="button"></span>   <!-- ⚪ -->
+
+    <span class="thick_range">
+        <input  id="thick_input"    type="range" oninput="changeThick(this.value);" min="4" max="25">
+    </span>
+        <!--
     <div class="arrowbox-container">
         <span id="arrowUp" class="arrow-box">
             ↑

@@ -25,8 +25,15 @@ canvas
     text-align: center;
     background-color: var(--black);
     border-radius: 0.5rem;
+    margin-bottom: 2rem;
 }
-.arrow-box
+img
+{
+    padding-top: 0.2rem;
+width: 2.5rem;
+vertical-align: middle;
+}
+/* .arrow-box
 {
     background-color: var(--black);
     width: 15%;
@@ -45,6 +52,46 @@ canvas
     text-align: center;
     align-self: center;
     margin: 2rem auto;
+    vertical-align: middle;
+} */
+#green_input
+{
+    background-color: var(--green);
+}
+#purple_input
+{
+    background-color: var(--purple);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+#white_input
+{
+    background-color: var(--white);
+    margin-right: 3.6rem;
+}
+#eraser_input
+{
+    background-color: var(--black);
+    margin-right: 3.6rem;
+}
+.button
+{
+    border-radius: 20%;
+    height: 3rem;
+    width: 3rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+#thick_input
+{
+    border: none;
+    background-color: var(--green);
+    vertical-align: middle;
+    width:10%;
+    
+}
+.thick_range
+{
     vertical-align: middle;
 }
 ::selection
