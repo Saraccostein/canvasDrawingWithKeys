@@ -58,7 +58,7 @@ img
     vertical-align: middle;
 }
 
-#red_input  /* 🔴 */
+#red_input    /* 🔴 */
 {
     background-color: var(--red);
     margin-right: var(--between_colors);
